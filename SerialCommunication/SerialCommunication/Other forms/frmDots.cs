@@ -37,7 +37,7 @@ namespace SerialCommunication.Other_forms
             foreach(var lidar in liDARs)
             {
                 var angle = Math.Round(lidar.start_angle * 0.01,0);
-                dotList.Add((lidar.start_angle, lidar.points[0].distance));
+                dotList.Add((lidar.start_angle, lidar.points[0].distance*0.1));
             }
 
             // Convert list back to array if needed
