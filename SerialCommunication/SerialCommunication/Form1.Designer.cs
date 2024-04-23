@@ -42,6 +42,7 @@
             timer1 = new System.Windows.Forms.Timer(components);
             btnLidar = new Button();
             btnReceive = new Button();
+            btnPlot = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -170,11 +171,22 @@
             btnReceive.UseVisualStyleBackColor = true;
             btnReceive.Click += btnReceive_Click;
             // 
+            // btnPlot
+            // 
+            btnPlot.Location = new Point(611, 327);
+            btnPlot.Name = "btnPlot";
+            btnPlot.Size = new Size(94, 29);
+            btnPlot.TabIndex = 14;
+            btnPlot.Text = "Plot";
+            btnPlot.UseVisualStyleBackColor = true;
+            btnPlot.Click += btnPlot_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnPlot);
             Controls.Add(btnReceive);
             Controls.Add(btnLidar);
             Controls.Add(btnStopTimer);
@@ -205,5 +217,6 @@
         private System.Windows.Forms.Timer timer1;
         private Button btnLidar;
         private Button btnReceive;
+        private Button btnPlot;
     }
 }

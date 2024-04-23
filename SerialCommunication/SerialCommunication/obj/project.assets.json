@@ -238,11 +238,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\Desktop\\VS projects\\SerialCommunication\\SerialCommunication\\SerialCommunication.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\Desktop\\LidarProject\\LidarProject\\SerialCommunication\\SerialCommunication\\SerialCommunication.csproj",
       "projectName": "SerialCommunication",
-      "projectPath": "C:\\Users\\PC\\Desktop\\VS projects\\SerialCommunication\\SerialCommunication\\SerialCommunication.csproj",
+      "projectPath": "C:\\Users\\PC\\Desktop\\LidarProject\\LidarProject\\SerialCommunication\\SerialCommunication\\SerialCommunication.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Desktop\\VS projects\\SerialCommunication\\SerialCommunication\\obj\\",
+      "outputPath": "C:\\Users\\PC\\Desktop\\LidarProject\\LidarProject\\SerialCommunication\\SerialCommunication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",

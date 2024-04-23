@@ -1,4 +1,8 @@
-﻿using SerialCommunication.Structures;
+﻿using SerialCommunication.Helpers;
+using SerialCommunication.Other_forms;
+using SerialCommunication.Structures;
+using System;
+using System.IO.Packaging;
 using System.IO.Ports;
 using System.Text;
 
@@ -7,6 +11,7 @@ namespace SerialCommunication
     public partial class frmReceiveData : Form
     {
         private SerialPort _serialPort = new SerialPort();
+        byte?[] framesBytes = new byte?[0];
         List<string> packages = new List<string>(); // list of received data in every turn
         List<LiDARFrame> frames = new List<LiDARFrame>(); //packages converted ti lidar frames
         int i;
@@ -37,6 +42,19 @@ namespace SerialCommunication
             string data = sp.ReadLine(); // Read the data from the serial port.
             packages.Add(data); //adding data to packages list
 
+            //modified code
+            //byte[] byteData = Encoding.ASCII.GetBytes(data);
+            //List<LiDARFrame> liDARFrames = new List<LiDARFrame>();
+
+
+            //Helper.ConvertToFrameOnReceived(ref byteData, ref liDARFrames);
+
+            //var frmDots = new frmDots(liDARFrames);
+            //frmDots.Show();
+
+            //end of modified code
+
+
             // Invoke the UI update on the UI thread.
             Invoke(new Action(() =>
             {
@@ -64,39 +82,6 @@ namespace SerialCommunication
                 _serialPort.Close();
         }
 
-        //private void UpdateUI(ushort distance, byte intensity, ushort speed, ushort startAngle, ushort endAngle)
-        //{
-        //    // Update UI elements with the parsed LiDAR data
-        //    // For example, display the distance, intensity, speed, angles, etc. in textboxes or charts
-        //    dataBox.AppendText($"Distance: {distance}, Intensity: {intensity}, Speed: {speed}, Start Angle: {startAngle}, End Angle: {endAngle}" + Environment.NewLine);
-        //}
-        //private void ParseLidarData(string data)
-        //{
-        //    // Split the data into individual components
-        //    string[] components = data.Split(','); // Assuming the data is comma-separated
-
-        //    // Extract information from the components
-        //    if (components.Length >= 5) // Assuming each data packet contains at least 5 components
-        //    {
-        //        // Extract distance, intensity, speed, angles, etc. from the components
-        //        string distanceStr = components[0];
-        //        string intensityStr = components[1];
-        //        string speedStr = components[2];
-        //        string startAngleStr = components[3];
-        //        string endAngleStr = components[4];
-
-        //        // Convert string representations to appropriate data types (e.g., ushort, byte)
-        //        ushort distance = ushort.Parse(distanceStr);
-        //        byte intensity = byte.Parse(intensityStr);
-        //        ushort speed = ushort.Parse(speedStr);
-        //        ushort startAngle = ushort.Parse(startAngleStr);
-        //        ushort endAngle = ushort.Parse(endAngleStr);
-
-        //        // Process the extracted data as needed
-        //        // For example, update UI elements, perform calculations, etc.
-        //        UpdateUI(distance, intensity, speed, startAngle, endAngle);
-        //    }
-        //}
 
         private void btnConPac_Click(object sender, EventArgs e)//convert string frames into bytes
         {
@@ -126,19 +111,22 @@ namespace SerialCommunication
 
         private void btnPackages_Click(object sender, EventArgs e)
         {
-            ConvertFrames(); // convert packages into frames(structure)
-            var frmPackages= new frmPackageView(frames);
+            ConvertFrames();
+            var frmPackages = new frmPackageView(frames);
             frmPackages.ShowDialog();
         }
+
 
         private void ConvertFrames()
         {
             for (int i = 0; i < packages.Count; i++)//convert every package item (string data)
             {
                 byte[] data = Encoding.ASCII.GetBytes(packages[i]);
-                ConvertSingleTurn(data);//extract frames from every data recieving turn
+                ConvertSingleTurn(data);//extract frames from every data receiving turn
             }
         }
+
+
 
         private void ConvertSingleTurn(byte[] data)
         {
@@ -150,7 +138,7 @@ namespace SerialCommunication
                     if (data[i] == 84 && data.Length - i > 46) //checks start of package (header) and are all bytes in same turn
                     {
                         var lidarFrame = new LiDARFrame();
-                        lidarFrame.header = data[i++];//adds each byte or two bytes to ecah attribute in structure
+                        lidarFrame.header = data[i++];//adds each byte or two bytes to each attribute in structure
                         lidarFrame.ver_len = data[i++];
                         lidarFrame.speed = (ushort)(data[i++] + data[i++] * 256);
                         lidarFrame.start_angle = (ushort)(data[i++] + data[i++] * 256);
@@ -165,13 +153,27 @@ namespace SerialCommunication
                         }
                         lidarFrame.end_angle = (ushort)(data[i++] + data[i++] * 256);
                         lidarFrame.timestamp = (ushort)(data[i++] + data[i++] * 256);
-                        lidarFrame.crc8= data[i];
+                        lidarFrame.crc8 = data[i];
+
+                        //txtBytePackage.AppendText("Start angle: " + lidarFrame.start_angle + "   " + "distance: " + lidarFrame.points[0].distance + Environment.NewLine);
 
                         frames.Add(lidarFrame);
 
                     }
                 }
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //ConvertFrames();
+        }
+
+        private void btnPlot_Click(object sender, EventArgs e)
+        {
+            ConvertFrames();
+            var frmDots = new frmDots(frames);
+            frmDots.Show();
         }
     }
 

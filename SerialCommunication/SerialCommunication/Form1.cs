@@ -9,9 +9,11 @@ namespace SerialCommunication
         public Form1()
         {
             InitializeComponent();
-            this.Click += (o,a) => { 
+            this.Click += (o, a) =>
+            {
                 MessageBox.Show($"{o}\n{a}");
             };
+            this.Paint += new PaintEventHandler(Form1_Paint);
         }
 
         int counter = 0;
@@ -103,8 +105,26 @@ namespace SerialCommunication
 
         private void btnReceive_Click(object sender, EventArgs e)
         {
-            var frmReceive= new frmReceiveData();
+            var frmReceive = new frmReceiveData();
             frmReceive.ShowDialog();
+        }
+
+        private void btnPlot_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            // Define the coordinates where you want to draw the point
+            int x = 100;
+            int y = 100;
+
+            // Create a Graphics object from the PaintEventArgs
+            Graphics g = e.Graphics;
+
+            // Draw a point at the specified coordinates
+            g.FillEllipse(Brushes.Red, x, y, 5, 5); // Adjust the size of the point as needed
         }
     }
 }

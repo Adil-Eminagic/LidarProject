@@ -27,3 +27,34 @@ C:\Users\PC\Desktop\VS projects\SerialCommunication\SerialCommunication\obj\Debu
 C:\Users\PC\Desktop\VS projects\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.frmLidar.resources
 C:\Users\PC\Desktop\VS projects\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.frmReceiveData.resources
 C:\Users\PC\Desktop\VS projects\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.frmPackageView.resources
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\bin\Debug\net8.0-windows\SerialCommunication.exe
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\bin\Debug\net8.0-windows\SerialCommunication.deps.json
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\bin\Debug\net8.0-windows\SerialCommunication.runtimeconfig.json
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\bin\Debug\net8.0-windows\SerialCommunication.dll
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\bin\Debug\net8.0-windows\SerialCommunication.pdb
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\bin\Debug\net8.0-windows\System.IO.Ports.dll
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\bin\Debug\net8.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.IO.Ports.dll
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.IO.Ports.dll
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.Form1.resources
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.frmLidar.resources
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.frmPackageView.resources
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.frmReceiveData.resources
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.AssemblyInfo.cs
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.sourcelink.json
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.csproj.CopyComplete
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.dll
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\refint\SerialCommunication.dll
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.pdb
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.genruntimeconfig.cache
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\ref\SerialCommunication.dll
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.Other_forms.frmDots.resources

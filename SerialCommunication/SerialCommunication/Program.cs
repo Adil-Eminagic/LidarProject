@@ -1,3 +1,5 @@
+using SerialCommunication.Other_forms;
+
 namespace SerialCommunication
 {
     internal static class Program

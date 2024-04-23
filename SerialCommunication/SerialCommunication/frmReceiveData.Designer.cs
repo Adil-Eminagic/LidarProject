@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             dataBox = new TextBox();
             btnRead = new Button();
             btnStopReading = new Button();
@@ -36,6 +37,8 @@
             txtPackageLenght = new TextBox();
             txt84 = new TextBox();
             btnPackages = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
+            btnPlot = new Button();
             SuspendLayout();
             // 
             // dataBox
@@ -110,11 +113,27 @@
             btnPackages.UseVisualStyleBackColor = true;
             btnPackages.Click += btnPackages_Click;
             // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
+            // 
+            // btnPlot
+            // 
+            btnPlot.Location = new Point(303, 504);
+            btnPlot.Name = "btnPlot";
+            btnPlot.Size = new Size(94, 29);
+            btnPlot.TabIndex = 8;
+            btnPlot.Text = "Open plot";
+            btnPlot.UseVisualStyleBackColor = true;
+            btnPlot.Click += btnPlot_Click;
+            // 
             // frmReceiveData
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1075, 550);
+            Controls.Add(btnPlot);
             Controls.Add(btnPackages);
             Controls.Add(txt84);
             Controls.Add(txtPackageLenght);
@@ -139,5 +158,7 @@
         private TextBox txtPackageLenght;
         private TextBox txt84;
         private Button btnPackages;
+        private System.Windows.Forms.Timer timer1;
+        private Button btnPlot;
     }
 }
