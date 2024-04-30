@@ -50,6 +50,41 @@ namespace SerialCommunication.Helpers
                 }
             }
         }
+
+        public static void ConverSingleDataRecieved(ref List<LiDARFrame> frames, byte[] byteData)
+        {
+            for (int i = 0; i < byteData.Length; i++)
+            {
+                if (byteData.Length > 46) // because frame consist of 47 bytes
+                {
+                    if (byteData[i] == 84 && byteData.Length - i > 46) //checks start of package (header) and are all bytes in same turn
+                    {
+                        var lidarFrame = new LiDARFrame();
+                        lidarFrame.header = byteData[i++];//adds each byte or two bytes to each attribute in structure
+                        lidarFrame.ver_len = byteData[i++];
+                        lidarFrame.speed = (ushort)(byteData[i++] + byteData[i++] * 256);
+                        lidarFrame.start_angle = (ushort)(byteData[i++] + byteData[i++] * 256);
+                        lidarFrame.points = new List<LidarPoint>();
+
+                        for (int j = 0; j < 12; j++)
+                        {
+                            LidarPoint lidarPoint = new LidarPoint();
+                            lidarPoint.distance = (ushort)(byteData[i++] + byteData[i++] * 256);
+                            lidarPoint.intensity = byteData[i++];
+                            lidarFrame.points.Add(lidarPoint);
+                        }
+                        lidarFrame.end_angle = (ushort)(byteData[i++] + byteData[i++] * 256);
+                        lidarFrame.timestamp = (ushort)(byteData[i++] + byteData[i++] * 256);
+                        lidarFrame.crc8 = byteData[i];
+
+
+
+                        frames.Add(lidarFrame);
+
+                    }
+                }
+            }
+        }
     }
 
     

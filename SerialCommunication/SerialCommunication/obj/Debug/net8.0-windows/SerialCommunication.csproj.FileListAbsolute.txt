@@ -58,3 +58,4 @@ C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunic
 C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.genruntimeconfig.cache
 C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\ref\SerialCommunication.dll
 C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.Other_forms.frmDots.resources
+C:\Users\PC\Desktop\LidarProject\LidarProject\SerialCommunication\SerialCommunication\obj\Debug\net8.0-windows\SerialCommunication.Other_forms.frmDrawingSpace.resources

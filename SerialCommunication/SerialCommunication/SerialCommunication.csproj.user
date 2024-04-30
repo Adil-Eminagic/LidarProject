@@ -16,5 +16,8 @@
     <Compile Update="Other forms\frmDots.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Other forms\frmDrawingSpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
