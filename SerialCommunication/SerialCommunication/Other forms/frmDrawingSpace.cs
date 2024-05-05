@@ -56,20 +56,49 @@ namespace SerialCommunication.Other_forms
             foreach (var lidar in liDARs)
             {
                 var angle = Math.Round(lidar.start_angle * 0.01, 0);
-                int indexToUpdate = dots.FindIndex(dot => dot.AngleInDegrees == angle);
-                if (indexToUpdate > 0)
-                    dots[indexToUpdate].Distance = lidar.points[0].distance * 0.5;
-                else
-                    dots.Add(new Dot()
+                var difference = Math.Round((lidar.end_angle - lidar.start_angle)*0.01,0) /11;
+
+                for (int i = 0; i < 11; i++)
+                {
+                    int indexToUpdate = dots.FindIndex(dot => dot.AngleInDegrees == angle);
+                    if (indexToUpdate > 0)
+                        dots[indexToUpdate].Distance = lidar.points[0].distance * 0.5;
+                    else
                     {
-                        AngleInDegrees = lidar.start_angle,
-                        Distance = lidar.points[0].distance * 0.5
-                    });
+                        dots.Add(new Dot()
+                        {
+                            AngleInDegrees = Math.Round(lidar.start_angle * 0.01 + difference*i,0),
+                            Distance = lidar.points[i].distance 
+                        });
+                    }
+                     
+                }
+                
             }
 
             Invalidate();
 
         }
+
+        //private void AddUpdateDots(ref List<Dot> dots, List<LiDARFrame> liDARs)
+        //{
+        //    foreach (var lidar in liDARs)
+        //    {
+        //        var angle = Math.Round(lidar.start_angle * 0.01, 0);
+        //        int indexToUpdate = dots.FindIndex(dot => dot.AngleInDegrees == angle);
+        //        if (indexToUpdate > 0)
+        //            dots[indexToUpdate].Distance = lidar.points[0].distance * 0.5;
+        //        else
+        //            dots.Add(new Dot()
+        //            {
+        //                AngleInDegrees = lidar.start_angle,
+        //                Distance = lidar.points[0].distance * 0.5
+        //            });
+        //    }
+
+        //    Invalidate();
+
+        //}
 
         private void frmDrawingSpace_Paint_1(object sender, PaintEventArgs e)
         {
