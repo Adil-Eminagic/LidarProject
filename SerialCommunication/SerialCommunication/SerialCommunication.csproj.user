@@ -13,10 +13,19 @@
     <Compile Update="frmReceiveData.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Other forms\frmAPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Other forms\frmDots.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Other forms\frmDrawingSpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Other forms\frmGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Other forms\frmTest.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

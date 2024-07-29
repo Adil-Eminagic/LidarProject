@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             btnRead = new Button();
+            btnPath = new Button();
             SuspendLayout();
             // 
             // btnRead
@@ -41,11 +42,22 @@
             btnRead.UseVisualStyleBackColor = true;
             btnRead.Click += btnRead_Click;
             // 
+            // btnPath
+            // 
+            btnPath.Location = new Point(208, 12);
+            btnPath.Name = "btnPath";
+            btnPath.Size = new Size(131, 39);
+            btnPath.TabIndex = 3;
+            btnPath.Text = "Get path";
+            btnPath.UseVisualStyleBackColor = true;
+            btnPath.Click += btnPath_Click;
+            // 
             // frmDrawingSpace
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(911, 562);
+            Controls.Add(btnPath);
             Controls.Add(btnRead);
             Name = "frmDrawingSpace";
             Text = "frmDrawingSpace";
@@ -56,5 +68,6 @@
         #endregion
 
         private Button btnRead;
+        private Button btnPath;
     }
 }

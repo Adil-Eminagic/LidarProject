@@ -15,6 +15,22 @@ def process_lidar_data(lidar_data):
         points.append([x, y])
     return points
 
+# def create_grid_map(points, resolution):
+#     min_x, max_x, min_y, max_y = max_coordinates(points)
+#     width = int((max_x - min_x) / resolution) + 1
+#     height = int((max_y - min_y) / resolution) + 1
+
+#     grid = [[1 for _ in range(width)] for _ in range(height)]
+
+#     for x, y in points:
+#         grid_x = int((x - min_x) / resolution)
+#         grid_y = int(( y - max_y) / resolution) * (-1)  # Flip y-axis and make it positive
+#         grid[grid_y][grid_x] = 0
+
+#     return grid
+
+
+
 # def create_grid_map(points, grid_size, map_size):
 #     grid = np.ones((map_size, map_size))
 #     for (x, y) in points:
@@ -51,12 +67,38 @@ def create_grid_map(points):
     
     return grid.tolist()
 
+# def create_grid_map(points):
+#     min_x = min(point[0] for point in points)
+#     min_y = min(point[1] for point in points)
+#     max_x = max(point[0] for point in points)
+#     max_y = max(point[1] for point in points)
+    
+#     # Determine grid size based on maximum span in x and y directions
+#     grid_size = max(max_x - min_x, max_y - min_y)
+    
+#     # Shift all points to ensure positive coordinates
+#     translated_points = [(x - min_x, y - max_y) for (x, y) in points]
+    
+#     # Determine new grid dimensions after translation
+#     grid_width = int(max_x - min_x) + 1
+#     grid_height = int(max_y - min_y) + 1
+    
+#     # Create grid
+#     grid = np.ones((grid_height, grid_width))
+    
+#     for (x, y) in translated_points:
+#         grid_x = int(x)
+#         grid_y = int(y)
+#         grid[grid_y, grid_x] = 0  # Mark the cell as occupied
+    
+#     return grid.tolist()
+
 def grid_shape(points):
     min_x,max_x,min_y, max_y = max_coordinates(points)
-    width = max_x - min_x
-    height = max_y - min_y
+    x = max_x - min_x
+    y = max_y - min_y
 
-    return width, height
+    return x, y
 
 def max_coordinates(points):
     min_x = min(point[0] for point in points)

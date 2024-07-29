@@ -1,5 +1,6 @@
 import math
 import heapq
+import functions as f
 
 # Define the Cell class
 class Cell:
@@ -11,11 +12,12 @@ class Cell:
 		self.h = 0 # Heuristic cost from this cell to destination
 
 # Define the size of the grid
-ROW = 100
-COL = 100
+
+# ROW = 100
+# COL = 100
 
 # Check if a cell is valid (within the grid)
-def is_valid(row, col):
+def is_valid(row, col, ROW, COL ):
 	return (row >= 0) and (row < ROW) and (col >= 0) and (col < COL)
 
 # Check if a cell is unblocked
@@ -52,14 +54,15 @@ def trace_path(cell_details, dest):
 	path.reverse()
 
 	# Print the path
-	for i in path:
-		print("->", i, end=" ")
-	print()
+	# for i in path:
+	# 	print("->", i, end=" ")
+	# print()
+	return list(path)
 
 # Implement the A* search algorithm
-def a_star_search(grid, src, dest):
+def a_star_search(grid, src, dest, ROW, COL):
 	# Check if the source and destination are valid
-	if not is_valid(src[0], src[1]) or not is_valid(dest[0], dest[1]):
+	if not is_valid(src[0], src[1], ROW, COL) or not is_valid(dest[0], dest[1], ROW, COL):
 		print("Source or destination is invalid")
 		return
 
@@ -111,7 +114,7 @@ def a_star_search(grid, src, dest):
 			new_j = j + dir[1]
 
 			# If the successor is valid, unblocked, and not visited
-			if is_valid(new_i, new_j) and is_unblocked(grid, new_i, new_j) and not closed_list[new_i][new_j]:
+			if is_valid(new_i, new_j, ROW, COL) and is_unblocked(grid, new_i, new_j) and not closed_list[new_i][new_j]:
 				# If the successor is the destination
 				if is_destination(new_i, new_j, dest):
 					# Set the parent of the destination cell
@@ -119,9 +122,9 @@ def a_star_search(grid, src, dest):
 					cell_details[new_i][new_j].parent_j = j
 					print("The destination cell is found")
 					# Trace and print the path from source to destination
-					trace_path(cell_details, dest)
+					path = trace_path(cell_details, dest)
 					found_dest = True
-					return
+					return path
 				else:
 					# Calculate the new f, g, and h values
 					g_new = cell_details[i][j].g + 1.0
